@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  API_URL: "https://patika-hafta-4.deta.dev/"
+  API_URL: "http://localhost:3000"
 };

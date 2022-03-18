@@ -1,0 +1,11 @@
+{
+  "users": [
+    {
+      "username": "berivan",
+      "pass": "123",
+      "id": 1
+    }
+  ],
+  "products": [],
+  "orders": []
+}

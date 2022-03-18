@@ -1,1 +1,29 @@
-<p>register works!</p>
+<div class="wrapper">
+  <div class="text-center mt-4 name"> E-Commerce App </div>
+  <form class="p-3" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="form-field d-flex align-items-center">
+      <span class="far fa-user"></span>
+      <input type="text" id="username" formControlName="username" placeholder="Username">
+    </div>
+    <!-- Mail alanı için gösterilecek hatalar -->
+    <div *ngIf="username.invalid && (username.dirty || username.touched)" class="invalid-feedback d-block mb-2">
+      {{ username.errors?.['required'] ? 'Mail is required.' : '' }}
+      {{ username.errors?.['minlength'] ? 'Password must be at least 3 characters long.' : '' }}
+    </div>
+    <div class="form-field d-flex align-items-center">
+      <span class="fas fa-key"></span>
+      <input type="password" id="password" formControlName="pass" placeholder="Password">
+    </div>
+    <!-- Şifre alanı için gösterilecek hatalar -->
+    <div *ngIf="pass.invalid && (pass.dirty || pass.touched)" class="invalid-feedback d-block mb-2">
+      {{ pass.errors?.['required'] ? 'Password is required.' : '' }}
+      {{ pass.errors?.['minlength'] ? 'Password must be at least 3 characters long.' : '' }}
+    </div>
+    <button type="submit" class="btn mt-3" [disabled]="!registerForm.valid">Register</button>
+    <!-- Servisten gelen hataları göstermek için -->
+    <div *ngIf="submitError && username.untouched && pass.untouched" class="alert alert-danger mt-3" role="alert">
+      {{ submitError }}
+    </div>
+  </form>
+  <div class="text-center fs-6"> <a routerLink="/login">Sign in</a> </div>
+</div>
