@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {AppService} from "../app.service";
+import {User} from "../model/User";
 
 @Component({
   selector: 'app-login',
@@ -35,13 +36,23 @@ export class LoginComponent implements OnInit {
     // form değerlerinin object olarak alınması
     let user = this.loginForm.value
     // login olmak için servis isteği
-    this.service.login(user.username, user.pass).subscribe(res => {
+    this.service.login(user.username, user.pass).subscribe(user => {
       // res nesnesi array olarak gelmektedir, içinde eleman yoksa kullanıcı bulunamamıştır
-      if(res.length != 0){
-        localStorage.setItem("user", JSON.stringify(res[0]))
-        this.router.navigate(['home'])
-      }else{
+      if(user) {
+        this.getShoppingCart(user)
+      } else {
         this.submitError = "Wrong user credentials!"
+        this.loginForm.reset()
+      }
+    })
+  }
+
+  getShoppingCart(user: User) {
+    this.service.getShoppingCart(user.id).subscribe(cart => {
+      if (cart) {
+        this.router.navigate(['home'])
+      } else {
+        this.submitError = "Shopping cart cannot received!"
         this.loginForm.reset()
       }
     })

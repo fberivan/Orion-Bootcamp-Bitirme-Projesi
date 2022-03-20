@@ -1,1 +1,37 @@
-<p>home works!</p>
+<app-header></app-header>
+<div class="container mt-3">
+  <div class="row justify-content-between">
+    <div class="col-7 ms-2">
+      <div class="input-group">
+        <div class="input-group-text" id="search"><span class="fa fa-search"></span></div>
+        <input type="text" class="form-control" [formControl]="searchQuery" placeholder="Search" aria-label="Search" aria-describedby="search">
+      </div>
+    </div>
+    <div class="col-4 me-2">
+      <select class="form-select" [(ngModel)]="selectedCategory" (change)="getProducts()" aria-label="Categories" [disabled]="!categories">
+        <option value="0" selected>All Products</option>
+        <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-3">
+  <div class="row">
+    <div *ngFor="let product of products" class="col col-md-6 col-lg-4 col-xl-3">
+      <div class="card shadow p-3 mx-auto mb-5 bg-body rounded" (click)="router.navigate(['product/' + product.id])" role="button" style="width: 18rem;">
+        <img src="{{product.image}}" class="card-img-top" alt="{{product.summary}}">
+        <div class="card-body">
+          <p class="card-text fs-5 fw-bold">{{ product.name }}</p>
+          <p class="card-text fs-6 fw-light text-muted">{{ product.summary }}</p>
+          <p class="card-text text-success fw-bold">{{ product.price }} ₺</p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="products && products.length == 0" class="col text-center min-vh-100 pt-5 fs-3 fw-bold text-muted">
+      No products found
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {AppService} from "../app.service";
 import {Router} from "@angular/router";
+import {ShoppingCart} from "../model/ShoppingCart";
+import {User} from "../model/User";
 
 @Component({
   selector: 'app-register',
@@ -35,13 +37,30 @@ export class RegisterComponent implements OnInit {
     // form değerlerinin object olarak alınması
     let user = this.registerForm.value
     // kayıt olmak için servis isteği
-    this.service.register(user).subscribe(res => {
+    this.service.register(user).subscribe(registeredUser => {
       // objenin property'leri yoksa hata alınmış demektir
-      if(Object.keys(res).length==0){
+      if (!registeredUser){
         this.submitError = "User cannot created!"
         this.registerForm.reset()
-      }else{
-        this.router.navigate(['login'])
+      } else {
+        this.createShoppingCart(registeredUser as User)
+      }
+    })
+  }
+
+  createShoppingCart(user: User) {
+    let cart = new ShoppingCart()
+    cart.user_id = user.id
+    cart.products = []
+    this.service.createShoppingCart(cart).subscribe(cart => {
+      if (cart) {
+        this.router.navigate(['home'])
+      } else {
+        this.submitError = "User created, but shopping cart not created!"
+        this.registerForm.disable()
+        setTimeout(() => {
+          this.router.navigate(['login'])
+        }, 3000)
       }
     })
   }

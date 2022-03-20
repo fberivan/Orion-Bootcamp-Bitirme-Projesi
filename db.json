@@ -6,6 +6,84 @@
       "id": 1
     }
   ],
-  "products": [],
+  "products": [
+    {
+      "id": 1,
+      "name": "Kadın Siyah Kazak",
+      "summary": "Ekru Fermuarlı Çizgili Oversize Uzun Triko Kazak",
+      "image": "/assets/product1.jpeg",
+      "price": 89.91,
+      "description": "· %70 Yün %30 Akrilik\n· Fermuarlı Boğazlı Yaka, Düşük Omuz, Uzun, Oversize Triko Kazak Stüdyo Çekimlerinde Renkler Işık Farklılığından Dolayı Değişiklik Gösterebilir.\n· Bu üründen en fazla 10 adet sipariş verilebilir. 10 adetin üzerindeki siparişleri Trendyol iptal etme hakkını saklı tutar.\n· Kampanya fiyatından satılmak üzere 100 adetten fazla stok sunulmuştur.\n· Listelenen fiyat 21 Mart 2022 tarihine kadar geçerlidir.",
+      "category_id": 1
+    },
+    {
+      "id": 2,
+      "name": "Kadın Triko Kazak",
+      "summary": "Krem Polo Yaka Fitilli Crop Triko Kazak",
+      "image": "/assets/product2.jpeg",
+      "price": 83.69,
+      "description": "· %100 Akrilik\n· Polo Yaka, Fitilli Dokulu, Likralı, Crop Triko Kazak Stüdyo Çekimlerinde Renkler Işık Farklılığından Dolayı Değişiklik Gösterebilir.\n· Bu üründen en fazla 10 adet sipariş verilebilir. 10 adetin üzerindeki siparişleri Trendyol iptal etme hakkını saklı tutar.\n· Kampanya fiyatından satılmak üzere 100 adetten fazla stok sunulmuştur.\n· Listelenen fiyat 21 Mart 2022 tarihine kadar geçerlidir.",
+      "category_id": 1
+    },
+    {
+      "id": 3,
+      "name": "Renkli Elbise",
+      "summary": "Çok Renkli Yaka Detaylı Elbise",
+      "image": "/assets/product3.jpeg",
+      "price": 142.49,
+      "description": "· %100 Pamuk\n· Modelin Ölçüleri: Boy: 1.78, Göğüs: 82 Bel: 61, Kalça: 89\n· Numune Beden: S/36/1\n· Ürünlerimiz TRENDYOL etiketi ile gönderilecektir.\n· Bu üründen en fazla 10 adet sipariş verilebilir. 10 adetin üzerindeki siparişleri Trendyol iptal etme hakkını saklı tutar.\n· Kampanya fiyatından satılmak üzere 100 adetten fazla stok sunulmuştur.\n· Listelenen fiyat 21 Mart 2022 tarihine kadar geçerlidir.",
+      "category_id": 2
+    },
+    {
+      "id": 4,
+      "name": "Mavi Denim Elbise",
+      "summary": "X Sagaza Studio Mavi Lastik Detaylı Denim Elbise",
+      "image": "/assets/product4.jpeg",
+      "price": 509.99,
+      "description": "· %100 Pamuk\n· Modelin Ölçüleri: Boy: 1.79, Göğüs: 85 Bel: 60, Kalça: 89\n· Numune Beden: S/36/1\n· Ürünlerimiz TRENDYOL etiketi ile gönderilecektir.\n· Bu üründen en fazla 10 adet sipariş verilebilir. 10 adetin üzerindeki siparişleri Trendyol iptal etme hakkını saklı tutar.\n· Kampanya fiyatından satılmak üzere 100 adetten fazla stok sunulmuştur.\n· Listelenen fiyat 21 Mart 2022 tarihine kadar geçerlidir.",
+      "category_id": 2
+    },
+    {
+      "id": 5,
+      "name": "Kadın Pembe Gömlek",
+      "summary": "Kadın Pembe Oversize Uzun Basic Gömlek",
+      "image": "/assets/product5.jpeg",
+      "price": 80.74,
+      "description": "· %70 Pamuk %30 Polyester\n· Oversize, Uzun, Kenarları Oval Kesim, Rahat Kalıp Gömlek.\n· Stüdyo Çekimlerinde Renkler Işık Farklılığından Dolayı Değişiklik Gösterebilir.\n· Boy: 1.76 cm, Göğüs: 86 cm Bel: 60 cm Kalça: 90 cm\n· Bu üründen en fazla 10 adet sipariş verilebilir. 10 adetin üzerindeki siparişleri Trendyol iptal etme hakkını saklı tutar.\n· Kampanya fiyatından satılmak üzere 100 adetten fazla stok sunulmuştur.\n· Listelenen fiyat 21 Mart 2022 tarihine kadar geçerlidir.\n· Bu ürün indirim kampanyasına dahil değildir.",
+      "category_id": 3
+    },
+    {
+      "id": 6,
+      "name": "Kadın Viskon Gömlek",
+      "summary": "Kadın Multi Yaprak Desenli Kol Katlamalı Viskon Gömlek",
+      "image": "/assets/product6.jpeg",
+      "price": 84.69,
+      "description": "· Modelin ölçüleri:Boy:175, göğüs:88, bel:62, kalça:90. Mankenin Üzerindeki Beden S/36/1 bedendir. Ürün Kumaşı: %100 Viskon Stüdyo çekimlerinde renkler ışık farklılığından dolayı değişiklik gösterebilir.\n· Bu üründen en fazla 10 adet sipariş verilebilir. 10 adetin üzerindeki siparişleri Trendyol iptal etme hakkını saklı tutar.\n· Kampanya fiyatından satılmak üzere 50 adetten fazla stok sunulmuştur.\n· İncelemiş olduğunuz ürünün satış fiyatını satıcı belirlemektedir.\n· Listelenen fiyat 21 Mart 2022 tarihine kadar geçerlidir.",
+      "category_id": 3
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Kazak"
+    },
+    {
+      "id": 2,
+      "name": "Elbise"
+    },
+    {
+      "id": 3,
+      "name": "Gömlek"
+    }
+  ],
+  "cart": [
+    {
+      "user_id": 1,
+      "products": [
+        3
+      ],
+      "id": 1
+    }
+  ],
   "orders": []
 }

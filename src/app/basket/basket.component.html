@@ -1,0 +1,39 @@
+<app-header></app-header>
+<div class="container my-4">
+  <div *ngIf="products.length > 0" class="row justify-content-center">
+    <div class="col min-vh-100">
+      <div class="card shadow p-4">
+        <span class="h2 mb-3">My Shopping Cart</span>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Product</th>
+              <th scope="col">Price</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let product of products; let i = index">
+              <th scope="row">{{ i + 1 }}</th>
+              <td>{{ product.name }}</td>
+              <td class="text-success fw-bold">{{ product.price}} ₺</td>
+              <td>
+                <button type="button" class="btn btn-danger btn-sm" (click)="deleteProduct(product.id)">
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="products.length <= 0" class="row">
+    <div class="col text-center min-vh-100 pt-5 fs-3 fw-bold text-muted">
+      Your shopping cart is empty!
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
