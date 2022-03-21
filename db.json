@@ -79,11 +79,21 @@
   "cart": [
     {
       "user_id": 1,
-      "products": [
-        3
-      ],
+      "products": [],
       "id": 1
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "user_id": 1,
+      "products": [
+        1,
+        6,
+        5
+      ],
+      "totalPrice": 255.33999999999997,
+      "date": "2022-03-21T09:59:17.342Z",
+      "id": 1
+    }
+  ]
 }

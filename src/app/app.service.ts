@@ -6,6 +6,7 @@ import {User} from "./model/User";
 import {Product} from "./model/Product";
 import {Category} from "./model/Category";
 import {ShoppingCart} from "./model/ShoppingCart";
+import {Order} from "./model/Order";
 
 @Injectable({
   providedIn: 'root'
@@ -117,5 +118,11 @@ export class AppService {
 
   getCategories(): Observable<Array<Category>> {
     return this.http.get<Array<Category>>(`${environment.API_URL}/categories`)
+  }
+
+  createOrder(order: Order): Observable<Order|undefined> {
+    return this.http.post<Order>(`${environment.API_URL}/orders`, order).pipe(
+      catchError(() => of(undefined))
+    )
   }
 }
