@@ -41,3 +41,25 @@ değerlendirmelerin görüntülenmesi
 
 
 Teknolojiler: Angular (13), JavaScript, TypeScript
+
+# Running on Local Machine
+
+Start the Angular Application
+
+```bash
+  npm run start
+```
+
+Start the Json-Server
+
+```bash
+  npm run start-api
+```
+
+# ScreenShots
+
+![1](https://raw.githubusercontent.com/164-orion-innovation-turkey-bootcamp/hafta4-odev-assignment-fberivan/main/screenshots/1.png)
+![2](https://raw.githubusercontent.com/164-orion-innovation-turkey-bootcamp/hafta4-odev-assignment-fberivan/main/screenshots/2.png)
+![3](https://raw.githubusercontent.com/164-orion-innovation-turkey-bootcamp/hafta4-odev-assignment-fberivan/main/screenshots/3.png)
+![4](https://raw.githubusercontent.com/164-orion-innovation-turkey-bootcamp/hafta4-odev-assignment-fberivan/main/screenshots/4.png)
+![5](https://raw.githubusercontent.com/164-orion-innovation-turkey-bootcamp/hafta4-odev-assignment-fberivan/main/screenshots/5.png)

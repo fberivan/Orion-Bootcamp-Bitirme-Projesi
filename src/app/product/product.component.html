@@ -1,5 +1,6 @@
 <app-header></app-header>
 <div class="container my-4">
+  <!-- Ürün bilgileri varsa -->
   <div *ngIf="product" class="row justify-content-center">
     <div class="col-12 col-md-6 mb-3">
       <img class="img-fluid rounded shadow" src="{{ product.image }}" alt="{{ product.name }}">
@@ -18,6 +19,7 @@
     </div>
   </div>
 
+  <!-- Ürün bilgileri yoksa -->
   <div *ngIf="!product" class="row">
     <div class="col text-center min-vh-100 pt-5 fs-3 fw-bold text-muted">
       Product not found!

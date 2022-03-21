@@ -1,5 +1,6 @@
 <app-header></app-header>
 <div class="container my-4">
+  <!-- Sepette ürün varken -->
   <div *ngIf="products.length > 0" class="row justify-content-center">
     <div class="col min-vh-100">
       <div class="card shadow p-4">
@@ -30,9 +31,11 @@
         <div class="container-fluid mt-3">
           <div class="row justify-content-around">
             <div class="col-6 my-auto">
+              <!-- Ürünlerin toplam fiyatı -->
               Total Price: <span class="text-success fw-">{{ totalPrice.toFixed(2) }} ₺</span>
             </div>
             <div class="col-6 text-end">
+              <!-- Sipariş ver butonu -->
               <button type="button" class="btn btn-success btn-sm align-self-end" (click)="checkOut()">
                 Check Out
               </button>
@@ -44,6 +47,7 @@
     </div>
   </div>
 
+  <!-- Sepetin boş olması -->
   <div *ngIf="products.length <= 0" class="row">
     <div class="col text-center min-vh-100 pt-5 fs-3 fw-bold text-muted">
       Your shopping cart is empty!

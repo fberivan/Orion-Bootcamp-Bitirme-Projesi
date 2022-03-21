@@ -1,3 +1,6 @@
+/**
+ * Ürün için model nesnesi
+ */
 export class Product {
   id!: number
   name!: string

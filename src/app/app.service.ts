@@ -24,6 +24,9 @@ export class AppService {
     this.loadCart()
   }
 
+  /**
+   * LocalStorage'da kayıtlı kullanıcı verisi varsa değişkene yüklüyoruz
+   */
   private loadUser() {
     // Giriş yapmış kullanıcı verisi varsa onu alıyoruz
     let user = localStorage.getItem("user")
@@ -33,17 +36,27 @@ export class AppService {
     }
   }
 
+  /**
+   * Kullanıcı sepet bilgileri yoksa almak için api isteği atıyoruz
+   */
   private loadCart() {
-    if (!this.shoppingCart.getValue()) {
+    if (!this.shoppingCart.getValue() && this.user) {
       this.getShoppingCart(this.user!.id).subscribe()
     }
   }
 
+  /**
+   * Kullanıcıyı LocalStorage'a kayıt ediyoruz
+   * @param user Kayıt edilecek kullanıcı nesnesi
+   */
   private saveUser(user: User) {
     localStorage.setItem("user", JSON.stringify(user))
     this.user = user
   }
 
+  /**
+   * LocalStorage'da kullanıcı verisi varsa true döner, yoksa false
+   */
   isLoggedIn(): boolean {
     return localStorage.getItem("user") != undefined
   }
@@ -75,6 +88,10 @@ export class AppService {
     )
   }
 
+  /**
+   * Kullanıcı sepeti oluşturma servisi
+   * @param cart Kullanıcı sepet nesnesi
+   */
   createShoppingCart(cart: ShoppingCart): Observable<ShoppingCart|undefined> {
     return this.http.post<ShoppingCart>(`${environment.API_URL}/cart`, cart).pipe(
       tap(cart => this.shoppingCart.next(cart)),
@@ -82,14 +99,21 @@ export class AppService {
     )
   }
 
-  updateShoppingCart(shoppingCart: ShoppingCart): Observable<ShoppingCart|undefined> {
-    let cartId = shoppingCart.id
-    return this.http.put<ShoppingCart>(`${environment.API_URL}/cart/${cartId}`, shoppingCart).pipe(
-      tap(cart => this.shoppingCart.next(cart)),
+  /**
+   * Kullanıcı sepeti güncelleme servisi
+   * @param cart Kullanıcı sepet nesnesi
+   */
+  updateShoppingCart(cart: ShoppingCart): Observable<ShoppingCart|undefined> {
+    return this.http.put<ShoppingCart>(`${environment.API_URL}/cart/${cart.id}`, cart).pipe(
+      tap(updatedCart => this.shoppingCart.next(updatedCart)),
       catchError(() => of(undefined))
     )
   }
 
+  /**
+   * Verilen kullanıcı id'si ile sepet bilgilerini getiren servis
+   * @param user_id Kullanıcı id'si
+   */
   getShoppingCart(user_id: number | string): Observable<ShoppingCart|undefined> {
     return this.http.get<Array<ShoppingCart>>(`${environment.API_URL}/cart?user_id=${user_id}`).pipe(
       map(carts => {
@@ -101,10 +125,19 @@ export class AppService {
     )
   }
 
+  /**
+   * Id'si verilen ürünün bilgilerini getiren servis
+   * @param id Bilgileri alınacak ürün id'si
+   */
   getProduct(id: string | number): Observable<Product> {
     return this.http.get<Product>(`${environment.API_URL}/products/${id}`)
   }
 
+  /**
+   * Verilen parametre değerlerine göre ürünleri getiren servis
+   * @param category_id 0 ise tüm kategoriler getirilir, değilse istenen kategori ile filtreler
+   * @param query Boş ise tüm ürünler getirilir, dolu ise verilen değerin ürün adında geçtiği tüm ürünleri filtreler
+   */
   getProducts(category_id: string, query: string = ""): Observable<Array<Product>> {
     let url = `${environment.API_URL}/products`
     if (query != "") {
@@ -116,10 +149,17 @@ export class AppService {
     return this.http.get<Array<Product>>(url)
   }
 
+  /**
+   * Tüm kategorileri getirir
+   */
   getCategories(): Observable<Array<Category>> {
     return this.http.get<Array<Category>>(`${environment.API_URL}/categories`)
   }
 
+  /**
+   * Sepetten yapılan satın alma işleminin sipariş kaydını oluşturur
+   * @param order Sipariş bilgilerini içeren nesne
+   */
   createOrder(order: Order): Observable<Order|undefined> {
     return this.http.post<Order>(`${environment.API_URL}/orders`, order).pipe(
       catchError(() => of(undefined))

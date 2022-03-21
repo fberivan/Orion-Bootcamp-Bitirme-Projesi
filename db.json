@@ -79,7 +79,9 @@
   "cart": [
     {
       "user_id": 1,
-      "products": [],
+      "products": [
+        4
+      ],
       "id": 1
     }
   ],

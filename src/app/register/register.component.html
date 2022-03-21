@@ -5,7 +5,7 @@
       <span class="far fa-user"></span>
       <input type="text" id="username" formControlName="username" placeholder="Username">
     </div>
-    <!-- Mail alanı için gösterilecek hatalar -->
+    <!-- Username alanı için gösterilecek hatalar -->
     <div *ngIf="username.invalid && (username.dirty || username.touched)" class="invalid-feedback d-block mb-2">
       {{ username.errors?.['required'] ? 'Mail is required.' : '' }}
       {{ username.errors?.['minlength'] ? 'Password must be at least 3 characters long.' : '' }}

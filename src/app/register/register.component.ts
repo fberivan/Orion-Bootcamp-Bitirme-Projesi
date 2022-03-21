@@ -33,6 +33,9 @@ export class RegisterComponent implements OnInit {
     }
   }
 
+  /**
+   * Register formu submit edildiğinde çalışır
+   */
   onSubmit() {
     // form değerlerinin object olarak alınması
     let user = this.registerForm.value
@@ -48,7 +51,12 @@ export class RegisterComponent implements OnInit {
     })
   }
 
+  /**
+   * Verilen kullanıcı için alışveriş sepeti oluşturur
+   * @param user Kullanıcı nesnesi
+   */
   createShoppingCart(user: User) {
+    // Kullanıcı için alışveriş sepeti nesnesi
     let cart = new ShoppingCart()
     cart.user_id = user.id
     cart.products = []
@@ -65,7 +73,7 @@ export class RegisterComponent implements OnInit {
     })
   }
 
-  // form içerisindeki mail alanına erişimi saplayan get fonksiyonu
+  // form içerisindeki username alanına erişimi saplayan get fonksiyonu
   get username() { return this.registerForm.get('username')!; }
 
   // form içerisindeki pass alanına erişimi saplayan get fonksiyonu

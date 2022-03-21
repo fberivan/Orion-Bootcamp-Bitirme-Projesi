@@ -13,6 +13,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'basket', component: BasketComponent },
   { path: 'product/:id', component: ProductComponent },
+  // Tanınmayan tüm url'leri ana sayfaya yönlendir
   { path: '**', redirectTo: '/home' }
 ];
 

@@ -1,3 +1,6 @@
+/**
+ * Sipariş için model nesnesi
+ */
 export class Order {
   id!: number
   user_id!: number

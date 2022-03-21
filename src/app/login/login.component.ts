@@ -32,6 +32,9 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  /**
+   * Login formu submit edildiğinde çalışır
+   */
   onSubmit() {
     // form değerlerinin object olarak alınması
     let user = this.loginForm.value
@@ -47,6 +50,10 @@ export class LoginComponent implements OnInit {
     })
   }
 
+  /**
+   * Verilen kullanıcının sepet nesnesini sunucudan alır
+   * @param user Kullanıcı nesnesi
+   */
   getShoppingCart(user: User) {
     this.service.getShoppingCart(user.id).subscribe(cart => {
       if (cart) {

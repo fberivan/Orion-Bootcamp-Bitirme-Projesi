@@ -1,5 +1,6 @@
 <app-header></app-header>
 <div class="container mt-3">
+  <!-- Arama alanı ve kategori listesi -->
   <div class="row justify-content-between">
     <div class="col-7 ms-2">
       <div class="input-group">
@@ -18,6 +19,7 @@
 
 <div class="container mt-3">
   <div class="row">
+    <!-- Ürünleri listeliyoruz -->
     <div *ngFor="let product of products" class="col col-md-6 col-lg-4 col-xl-3">
       <div class="card shadow p-3 mx-auto mb-5 bg-body rounded" (click)="router.navigate(['product/' + product.id])" role="button" style="width: 18rem;">
         <img src="{{product.image}}" class="card-img-top" alt="{{product.summary}}">
@@ -29,6 +31,7 @@
       </div>
     </div>
 
+    <!-- Ürün listesi boşsa -->
     <div *ngIf="products && products.length == 0" class="col text-center min-vh-100 pt-5 fs-3 fw-bold text-muted">
       No products found
     </div>
