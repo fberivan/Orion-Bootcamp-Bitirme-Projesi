@@ -62,6 +62,17 @@ export class AppService {
   }
 
   /**
+   * Kullanıcının admin yetkisi varsa true döner, yoksa false
+   */
+  isUserAdmin(): boolean {
+    let user = localStorage.getItem("user")
+    if (user == undefined) return false;
+
+    this.user = JSON.parse(user)
+    return this.user?.is_admin == true
+  }
+
+  /**
    * Login olmak için kullanılan servis fonksiyonu
    * @param username Kullanıcı adı
    * @param pass Kullanıcı şifresi

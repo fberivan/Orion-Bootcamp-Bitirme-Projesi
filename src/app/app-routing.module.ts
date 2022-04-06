@@ -7,6 +7,7 @@ import {BasketComponent} from "./basket/basket.component";
 import {ProductComponent} from "./product/product.component";
 import {AuthGuard} from "./auth.guard";
 import {AlreadyLoggedInGuard} from "./already-logged-in.guard";
+import {AdminGuard} from "./admin.guard";
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent, canActivate: [AlreadyLoggedInGuard] },
   { path: 'basket', component: BasketComponent, canActivate: [AuthGuard] },
   { path: 'product/:id', component: ProductComponent, canActivate: [AuthGuard] },
+  { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule), canLoad: [AdminGuard] },
   // Tanınmayan tüm url'leri ana sayfaya yönlendir
   { path: '**', redirectTo: '/home' }
 ];
