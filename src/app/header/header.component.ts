@@ -13,10 +13,6 @@ export class HeaderComponent implements OnInit {
               public service: AppService) { }
 
   ngOnInit(): void {
-    if (!this.service.isLoggedIn()) {
-      // Kullanıcı giriş yapmamış, login ekranına yönlendiriyoruz
-      this.router.navigate(['login'])
-    }
   }
 
   logOut() {

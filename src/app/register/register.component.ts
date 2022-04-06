@@ -27,10 +27,6 @@ export class RegisterComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit(): void {
-    if (this.service.isLoggedIn()) {
-      // Kullanıcı giriş yapmış, home ekranına yönlendiriyoruz
-      this.router.navigate(['home'])
-    }
   }
 
   /**
