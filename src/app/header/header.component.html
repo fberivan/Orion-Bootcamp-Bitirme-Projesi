@@ -12,6 +12,10 @@
           <a class="nav-link" routerLinkActive="active" routerLink="/home">Home</a>
         </li>
 
+        <li *ngIf="service.user?.is_admin" class="nav-item">
+          <a class="nav-link" routerLinkActive="active" target="_blank" routerLink="/admin">Admin Panel</a>
+        </li>
+
         <li class="nav-item me-3 ms-md-auto me-md-4">
           <div class="nav-link position-relative" role="button" routerLink="/basket">
             Shopping Cart

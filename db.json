@@ -3,7 +3,16 @@
     {
       "username": "berivan",
       "pass": "123",
-      "id": 1
+      "is_admin": false,
+      "id": 1,
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwibmFtZSI6IkJlcml2YW4iLCJpYXQiOjE1MTYyMzkwMjJ9.5AyLan3mwyB9ILntSQ8uCe9JwHpCPwJ0NX6Sjs197tU"
+    },
+    {
+      "username": "fatma",
+      "pass": "456",
+      "is_admin": true,
+      "id": 2,
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyIiwibmFtZSI6IkZhdG1hIiwiaWF0IjoxNTE2MjM5MDIyfQ.b9-Mb0UQ254QxTujEv90Y9P-aDLCx05vlGIbZ4TJETU"
     }
   ],
   "products": [
@@ -83,6 +92,13 @@
         4
       ],
       "id": 1
+    },
+    {
+      "user_id": 2,
+      "products": [
+        2
+      ],
+      "id": 2
     }
   ],
   "orders": [
