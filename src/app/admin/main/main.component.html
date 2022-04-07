@@ -1,1 +1,33 @@
-<router-outlet></router-outlet>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Admin | E-Commerce</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+
+<div class="layout-wrapper" [ngClass]="{'layout-overlay':isOverlay(),
+                                'layout-static':isStatic(),
+                                'layout-theme-light':!config.dark,
+                                'layout-theme-dark':config.dark,
+                                'layout-overlay-sidebar-active': overlayMenuActive,
+                                'layout-static-sidebar-inactive': staticMenuInactive,
+                                'layout-mobile-sidebar-active':menuActiveMobile,
+                                'p-ripple-disabled': !config.ripple, 'p-input-filled': config.inputStyle === 'filled'}">
+  <app-topbar></app-topbar>
+  <div class="layout-sidebar">
+    <app-menu></app-menu>
+  </div>
+  <div class="layout-main-container">
+    <div class="layout-main">
+      <router-outlet></router-outlet>
+    </div>
+    <app-footer></app-footer>
+  </div>
+  <div *ngIf="menuActiveMobile" class="layout-mask p-component-overlay"></div>
+</div>
+
+</body>
+</html>

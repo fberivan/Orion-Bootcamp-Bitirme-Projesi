@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {AppService} from "../app.service";
 import {Product} from "../model/Product";
 import {Order} from "../model/Order";
@@ -6,7 +6,12 @@ import {Order} from "../model/Order";
 @Component({
   selector: 'app-basket',
   templateUrl: './basket.component.html',
-  styleUrls: ['./basket.component.css']
+  styleUrls: [
+    '../../../node_modules/bootstrap/dist/css/bootstrap.min.css',
+    '../shared/front_side.scss',
+    './basket.component.css'
+  ],
+  encapsulation: ViewEncapsulation.None,
 })
 export class BasketComponent implements OnInit {
 

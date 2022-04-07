@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {AppService} from "../app.service";
 import {Router} from "@angular/router";
@@ -8,7 +8,12 @@ import {User} from "../model/User";
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css', '../shared/login_register.css']
+  styleUrls: [
+    '../../../node_modules/bootstrap/dist/css/bootstrap.min.css',
+    '../shared/front_side.scss',
+    '../shared/login_register.css'
+  ],
+  encapsulation: ViewEncapsulation.None,
 })
 export class RegisterComponent implements OnInit {
 

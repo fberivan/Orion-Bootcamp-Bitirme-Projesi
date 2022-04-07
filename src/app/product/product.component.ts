@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {Product} from "../model/Product";
 import {AppService} from "../app.service";
@@ -6,7 +6,12 @@ import {AppService} from "../app.service";
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
-  styleUrls: ['./product.component.css']
+  styleUrls: [
+    '../../../node_modules/bootstrap/dist/css/bootstrap.min.css',
+    '../shared/front_side.scss',
+    './product.component.css'
+  ],
+  encapsulation: ViewEncapsulation.None,
 })
 export class ProductComponent implements OnInit {
 

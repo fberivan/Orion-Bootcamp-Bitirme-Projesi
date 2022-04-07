@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {AppService} from "../app.service";
 import {Product} from "../model/Product";
 import {Category} from "../model/Category";
@@ -9,7 +9,11 @@ import {Router} from "@angular/router";
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: [
+    '../../../node_modules/bootstrap/dist/css/bootstrap.min.css',
+    '../shared/front_side.scss'
+  ],
+  encapsulation: ViewEncapsulation.None,
 })
 export class HomeComponent implements OnInit {
 

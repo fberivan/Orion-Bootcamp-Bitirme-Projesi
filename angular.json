@@ -3,11 +3,11 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "hafta4": {
+    "orion-bootcamp-bitirme-projesi": {
       "projectType": "application",
       "schematics": {
-        "@schematics/angular:application": {
-          "strict": true
+        "@schematics/angular:component": {
+          "style": "scss"
         }
       },
       "root": "",
@@ -17,37 +17,40 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/hafta4",
+            "outputPath": "dist/orion-bootcamp-bitirme-projesi",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
-              "node_modules/@fortawesome/fontawesome-free/js/all.js"
-            ]
+              "node_modules/@fortawesome/fontawesome-free/js/all.js",
+              "node_modules/prismjs/prism.js",
+              "node_modules/prismjs/components/prism-typescript.js"
+            ],
+            "allowedCommonJsDependencies": ["chart.js"]
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "3mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
                 }
               ],
               "fileReplacements": [
@@ -73,10 +76,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "hafta4:build:production"
+              "browserTarget": "orion-bootcamp-bitirme-projesi:build:production"
             },
             "development": {
-              "browserTarget": "hafta4:build:development"
+              "browserTarget": "orion-bootcamp-bitirme-projesi:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -84,7 +87,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "hafta4:build"
+            "browserTarget": "orion-bootcamp-bitirme-projesi:build"
           }
         },
         "test": {
@@ -94,23 +97,25 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
+            "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
-              "node_modules/@fortawesome/fontawesome-free/js/all.js"
+              "node_modules/@fortawesome/fontawesome-free/js/all.js",
+              "node_modules/prismjs/prism.js",
+              "node_modules/prismjs/components/prism-typescript.js"
             ]
           }
         }
       }
     }
   },
-  "defaultProject": "hafta4"
+  "defaultProject": "orion-bootcamp-bitirme-projesi"
 }
