@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule} from '@angular/common';
 
 import { AdminRoutingModule } from './admin-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -12,6 +12,14 @@ import {MenuService} from "./service/app.menu.service";
 import {AppMenuitemComponent} from "./menu/app.menuitem.component";
 import {ProductsComponent} from "./products/products.component";
 
+import { DataViewModule } from 'primeng/dataview';
+import { DropdownModule } from 'primeng/dropdown';
+import { RatingModule } from 'primeng/rating';
+import { ButtonModule } from 'primeng/button';
+import { PickListModule } from 'primeng/picklist';
+import { OrderListModule } from 'primeng/orderlist';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ConfirmPopupModule } from 'primeng/confirmpopup';
 
 @NgModule({
   declarations: [
@@ -25,7 +33,15 @@ import {ProductsComponent} from "./products/products.component";
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    DataViewModule,
+    DropdownModule,
+    RatingModule,
+    ButtonModule,
+    PickListModule,
+    OrderListModule,
+    ConfirmDialogModule,
+    ConfirmPopupModule
   ],
   providers: [
     MenuService,

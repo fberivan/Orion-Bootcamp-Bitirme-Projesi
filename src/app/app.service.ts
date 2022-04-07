@@ -16,6 +16,9 @@ export class AppService {
   //Giriş yapmış olan kullanıcının bilgilerinin tutulacağı değişken
   user: User | undefined
 
+  // Ürün kategori listesi
+  categories: Array<Category> | undefined
+
   // Kullanıcı sepeti
   shoppingCart = new BehaviorSubject<ShoppingCart|undefined>(undefined)
 
@@ -164,7 +167,9 @@ export class AppService {
    * Tüm kategorileri getirir
    */
   getCategories(): Observable<Array<Category>> {
-    return this.http.get<Array<Category>>(`${environment.API_URL}/categories`)
+    return this.http.get<Array<Category>>(`${environment.API_URL}/categories`).pipe(
+      tap(categories => this.categories = categories)
+    )
   }
 
   /**
