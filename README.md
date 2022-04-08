@@ -27,3 +27,4 @@ Start the Json-Server
 ![4](https://raw.githubusercontent.com/fberivan/Orion-Bootcamp-Bitirme-Projesi/main/screenshots/4.png)
 ![5](https://raw.githubusercontent.com/fberivan/Orion-Bootcamp-Bitirme-Projesi/main/screenshots/5.png)
 ![6](https://raw.githubusercontent.com/fberivan/Orion-Bootcamp-Bitirme-Projesi/main/screenshots/6.png)
+![7](https://raw.githubusercontent.com/fberivan/Orion-Bootcamp-Bitirme-Projesi/main/screenshots/7.png)
