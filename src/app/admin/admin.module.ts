@@ -20,6 +20,7 @@ import { PickListModule } from 'primeng/picklist';
 import { OrderListModule } from 'primeng/orderlist';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
+import {ToastModule} from "primeng/toast";
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { ConfirmPopupModule } from 'primeng/confirmpopup';
     PickListModule,
     OrderListModule,
     ConfirmDialogModule,
-    ConfirmPopupModule
+    ConfirmPopupModule,
+    ToastModule
   ],
   providers: [
     MenuService,

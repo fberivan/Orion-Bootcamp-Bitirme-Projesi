@@ -148,6 +148,16 @@ export class AppService {
   }
 
   /**
+   * Id'si verilen ürünü silen servis
+   * @param id Silinecek ürün id'si
+   */
+  deleteProduct(id: string | number): Observable<Product|undefined> {
+    return this.http.delete<Product>(`${environment.API_URL}/products/${id}`).pipe(
+      catchError(() => of(undefined))
+    )
+  }
+
+  /**
    * Verilen parametre değerlerine göre ürünleri getiren servis
    * @param category_id 0 ise tüm kategoriler getirilir, değilse istenen kategori ile filtreler
    * @param query Boş ise tüm ürünler getirilir, dolu ise verilen değerin ürün adında geçtiği tüm ürünleri filtreler

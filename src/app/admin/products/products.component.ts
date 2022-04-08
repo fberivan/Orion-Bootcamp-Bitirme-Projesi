@@ -22,7 +22,7 @@ export class ProductsComponent implements OnInit {
               private messageService: MessageService) {}
 
   ngOnInit() {
-    this.service.getProducts("0").subscribe(data => this.products = data);
+    this.getAllProducts()
     if (!this.service.categories) {
       this.service.getCategories().subscribe(() => console.debug("Categories received!"));
     }
@@ -31,6 +31,10 @@ export class ProductsComponent implements OnInit {
       {label: 'Price High to Low', value: '!price'},
       {label: 'Price Low to High', value: 'price'}
     ];
+  }
+
+  private getAllProducts() {
+    this.service.getProducts("0").subscribe(data => this.products = data);
   }
 
   onSortChange(event) {
@@ -60,10 +64,12 @@ export class ProductsComponent implements OnInit {
       message: `Are you sure you want to delete "${product.name}"?`,
       icon: 'pi pi-exclamation-triangle',
       accept: () => {
-        this.messageService.add({severity: 'info', summary: 'Confirmed', detail: 'You have accepted'});
-      },
-      reject: () => {
-        this.messageService.add({severity: 'error', summary: 'Rejected', detail: 'You have rejected'});
+        this.service.deleteProduct(product.id).subscribe(res => {
+          if (res) {
+            this.getAllProducts()
+            this.messageService.add({ key: 'tst', severity: 'success', summary: 'Success', detail: `"${product.name}" successfully deleted.` });
+          }
+        })
       }
     });
   }
