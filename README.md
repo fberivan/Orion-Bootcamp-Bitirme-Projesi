@@ -21,9 +21,9 @@ Start the Json-Server
 
 # ScreenShots
 
-![1](https://raw.githubusercontent.com/164-orion-innovation-turkey-bootcamp/hafta4-odev-assignment-fberivan/main/screenshots/1.png)
-![2](https://raw.githubusercontent.com/164-orion-innovation-turkey-bootcamp/hafta4-odev-assignment-fberivan/main/screenshots/2.png)
-![3](https://raw.githubusercontent.com/164-orion-innovation-turkey-bootcamp/hafta4-odev-assignment-fberivan/main/screenshots/3.png)
-![4](https://raw.githubusercontent.com/164-orion-innovation-turkey-bootcamp/hafta4-odev-assignment-fberivan/main/screenshots/4.png)
-![5](https://raw.githubusercontent.com/164-orion-innovation-turkey-bootcamp/hafta4-odev-assignment-fberivan/main/screenshots/5.png)
-![6](https://raw.githubusercontent.com/164-orion-innovation-turkey-bootcamp/hafta4-odev-assignment-fberivan/main/screenshots/5.png)
+![1](https://raw.githubusercontent.com/fberivan/Orion-Bootcamp-Bitirme-Projesi/main/screenshots/1.png)
+![2](https://raw.githubusercontent.com/fberivan/Orion-Bootcamp-Bitirme-Projesi/main/screenshots/2.png)
+![3](https://raw.githubusercontent.com/fberivan/Orion-Bootcamp-Bitirme-Projesi/main/screenshots/3.png)
+![4](https://raw.githubusercontent.com/fberivan/Orion-Bootcamp-Bitirme-Projesi/main/screenshots/4.png)
+![5](https://raw.githubusercontent.com/fberivan/Orion-Bootcamp-Bitirme-Projesi/main/screenshots/5.png)
+![6](https://raw.githubusercontent.com/fberivan/Orion-Bootcamp-Bitirme-Projesi/main/screenshots/6.png)
