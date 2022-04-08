@@ -191,4 +191,14 @@ export class AppService {
       catchError(() => of(undefined))
     )
   }
+
+  /**
+   * Yeni ürün oluşturur
+   * @param product Ürün bilgilerini içeren nesne
+   */
+  createProduct(product: Product): Observable<Product|undefined> {
+    return this.http.post<Product>(`${environment.API_URL}/products`, product).pipe(
+      catchError(() => of(undefined))
+    )
+  }
 }

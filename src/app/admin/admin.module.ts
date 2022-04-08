@@ -21,6 +21,11 @@ import { OrderListModule } from 'primeng/orderlist';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import {ToastModule} from "primeng/toast";
+import {NewProductComponent} from "./new_product/new_product.component";
+import {InputTextModule} from "primeng/inputtext";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {InputTextareaModule} from "primeng/inputtextarea";
+import {RippleModule} from "primeng/ripple";
 
 @NgModule({
   declarations: [
@@ -30,7 +35,8 @@ import {ToastModule} from "primeng/toast";
     AppMenuComponent,
     AppMenuitemComponent,
     AppTopBarComponent,
-    ProductsComponent
+    ProductsComponent,
+    NewProductComponent
   ],
   imports: [
     CommonModule,
@@ -43,7 +49,12 @@ import {ToastModule} from "primeng/toast";
     OrderListModule,
     ConfirmDialogModule,
     ConfirmPopupModule,
-    ToastModule
+    ToastModule,
+    InputTextModule,
+    FormsModule,
+    InputTextareaModule,
+    RippleModule,
+    ReactiveFormsModule
   ],
   providers: [
     MenuService,

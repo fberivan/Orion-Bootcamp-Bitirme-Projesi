@@ -1,0 +1,59 @@
+<div class="grid">
+  <div class="col-12">
+    <div class="card">
+      <div class="p-fluid">
+        <h5>Create New Product</h5>
+        <p-toast key="toast" [baseZIndex]="99999"></p-toast>
+        <form id="createForm" [formGroup]="createForm" (ngSubmit)="onSubmit()">
+          <div class="field">
+            <label htmlFor="name">Name</label>
+            <input pInputText id="name" type="text" formControlName="name" aria-describedby="name-help" [ngClass]="{'ng-dirty ng-invalid': name.invalid && (name.dirty || name.touched)}"/>
+            <small *ngIf="name.invalid && (name.dirty || name.touched)" id="name-help" class="p-error">
+              {{ name.errors?.['required'] ? 'Product name is required.' : '' }}
+              {{ name.errors?.['minlength'] ? 'Product name must be at least 3 characters long.' : '' }}
+            </small>
+          </div>
+          <div class="field">
+            <label htmlFor="image">Image Url</label>
+            <input pInputText id="image" formControlName="image" type="text" aria-describedby="image-help" [ngClass]="{'ng-dirty ng-invalid': image.invalid && (image.dirty || image.touched)}"/>
+            <small *ngIf="image.invalid && (image.dirty || image.touched)" id="image-help" class="p-error">
+              {{ image.errors?.['required'] ? 'Image url is required.' : '' }}
+              {{ image.errors?.['pattern'] ? 'Invalid url entered for image.' : '' }}
+            </small>
+          </div>
+          <div class="field">
+            <label htmlFor="summary">Summary</label>
+            <input pInputText id="summary" formControlName="summary" type="text" aria-describedby="summary-help" [ngClass]="{'ng-dirty ng-invalid': summary.invalid && (summary.dirty || summary.touched)}" />
+            <small *ngIf="summary.invalid && (summary.dirty || summary.touched)" id="summary-help" class="p-error">
+              {{ summary.errors?.['required'] ? 'Summary is required.' : '' }}
+              {{ summary.errors?.['minlength'] ? 'Summary must be at least 3 characters long.' : '' }}
+            </small>
+          </div>
+          <div class="field">
+            <label htmlFor="description">Description</label>
+            <textarea pInputTextarea id="description" formControlName="description" autoResize rows="5" cols="30" aria-describedby="description-help" [ngClass]="{'ng-dirty ng-invalid': description.invalid && (description.dirty || description.touched)}"></textarea>
+            <small *ngIf="description.invalid && (description.dirty || description.touched)" id="description-help" class="p-error">
+              {{ description.errors?.['required'] ? 'Description is required.' : '' }}
+              {{ description.errors?.['minlength'] ? 'Description must be at least 10 characters long.' : '' }}
+            </small>
+          </div>
+          <div class="field">
+            <label htmlFor="price">Price</label>
+            <div class="p-inputgroup">
+              <input type="number" step="0.01" pInputText formControlName="price" id="price" aria-describedby="price-help" [ngClass]="{'ng-dirty ng-invalid': price.invalid && (price.dirty || price.touched)}">
+              <span class="p-inputgroup-addon">₺</span>
+            </div>
+            <small *ngIf="price.invalid && (price.dirty || price.touched)" id="price-help" class="p-error">
+              {{ price.errors?.['required'] ? 'Price is required.' : '' }}
+            </small>
+          </div>
+        </form>
+        <div class="field">
+          <label htmlFor="state">Category</label>
+          <p-dropdown [options]="service.categories" optionLabel="name" [(ngModel)]="selectedCategory"></p-dropdown>
+        </div>
+      </div>
+      <button pButton pRipple type="submit" form="createForm" [disabled]="!createForm.valid" label="Create" icon="pi pi-plus" class="mt-5 mb-2"></button>
+    </div>
+  </div>
+</div>
