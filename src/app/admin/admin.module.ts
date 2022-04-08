@@ -26,6 +26,7 @@ import {InputTextModule} from "primeng/inputtext";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {InputTextareaModule} from "primeng/inputtextarea";
 import {RippleModule} from "primeng/ripple";
+import {EditProductComponent} from "./edit_product/edit_product.component";
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import {RippleModule} from "primeng/ripple";
     AppMenuitemComponent,
     AppTopBarComponent,
     ProductsComponent,
-    NewProductComponent
+    NewProductComponent,
+    EditProductComponent
   ],
   imports: [
     CommonModule,

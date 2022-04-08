@@ -201,4 +201,14 @@ export class AppService {
       catchError(() => of(undefined))
     )
   }
+
+  /**
+   * Ürün güncelleme servisi
+   * @param product Ürün bilgilerini içeren nesne
+   */
+  updateProduct(product: Product): Observable<Product|undefined> {
+    return this.http.put<Product>(`${environment.API_URL}/products/${product.id}`, product).pipe(
+      catchError(() => of(undefined))
+    )
+  }
 }

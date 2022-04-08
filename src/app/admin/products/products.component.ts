@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Product} from "../../model/Product";
 import {ConfirmationService, MessageService, SelectItem} from "primeng/api";
 import {AppService} from "../../app.service";
+import {Router} from "@angular/router";
 
 @Component({
   templateUrl: './products.component.html',
@@ -18,6 +19,7 @@ export class ProductsComponent implements OnInit {
   sortField: string;
 
   constructor(private service: AppService,
+              public router: Router,
               private confirmationService: ConfirmationService,
               private messageService: MessageService) {}
 

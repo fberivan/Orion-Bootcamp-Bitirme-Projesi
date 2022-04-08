@@ -4,7 +4,6 @@ import {ConfirmationService, MessageService} from "primeng/api";
 import {AppService} from "../../app.service";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Category} from "../../model/Category";
-import {Router} from "@angular/router";
 
 @Component({
   templateUrl: './new_product.component.html',
